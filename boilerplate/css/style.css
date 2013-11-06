@@ -1,0 +1,6 @@
+/* styles will go here to overwrite the bootstrap default values */
+
+/* ==== Spacing classes ==== */
+.small-margin-bottom {
+	margin-bottom: .5em;
+}
