@@ -1,0 +1,43 @@
+/* styles will go here to overwrite the bootstrap default values */
+
+/* ==== Embedded fonts ==== */
+@font-face {
+
+	font-family:Santana;
+	src: url('../fonts/santana.ttf'),
+		 url('../fonts/santana.eot')/* IE */;
+}
+
+/* ==== Body Styles ==== */
+
+body{
+	background-color: #7E8CA4;
+	color: #EFEFEF;
+}
+
+/* ==== Heading styles ==== */
+
+.page-head h1 {
+	font-family: 'Santana', Helvetica, Arial, sans-serif;
+}
+
+
+/* ==== Spacing classes ==== */
+.small-margin-bottom {
+	margin-bottom: .5em;
+}
+
+/* ==== Wells ==== */
+.well {
+	color: #000;
+}
+
+.bottom {
+	position: fixed;
+	bottom: 5;
+}
+
+
+.center {
+	margin: auto;
+}
