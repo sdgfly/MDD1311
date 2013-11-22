@@ -1,17 +1,17 @@
-//Placeholder file for the application controller
-//App's main module with dependencies for UI-Router and FireBase
-var EatInApp = angular.module('EatInApp', ["ui.router"]);
+//App's main module with dependencies for UI-Router
+var FoodApp = angular.module('FoodApp', ["ui.router"]);
 //Configures which states will activate which views and url's and what 
 //their controllers will be.
 
 
-EatInApp.config(function($stateProvider, $urlRouterProvider) {
+
+FoodApp.config(function($stateProvider, $urlRouterProvider) {
 	$urlRouterProvider.otherwise("/search");
 	$stateProvider
 //	search state is default view
 	.state('search', {
 		url: '/search',
-		templateUrl: 'views/search.html'
+		templateUrl: 'views/search.html',
 	})
 // navigates to About view
 	.state('about', {
@@ -24,14 +24,15 @@ EatInApp.config(function($stateProvider, $urlRouterProvider) {
 		url: '/results',
 		templateUrl: 'views/search.results.html',
 		controller: function ($scope, $http) {
+			  
 		 	//var for unique App ID
-		 	$scope.appId = '4606347e';
+		 	$scope.appId = 'a4d85a57';
 		 	//var for unique API Key
-		    $scope.apiKey = '2b0dc330fcebb3d65bdddc74aae878b3';
+		    $scope.apiKey = '4dda81acc7ebb71956fe76c76f0ec363';
 		    //array that will contain search results
 		    $scope.results = [];
 	     	//results returned will be JSONP format
-	       	$http.jsonp('http://api.yummly.com/v1/api/recipes?_app_id=' + $scope.appId + '&_app_key=' + $scope.apiKey + '&q=' + $scope.keyword + '&allowedCuisine[]=cuisine^cuisine-' + $scope.cuisine.val('id') + '&excludedIngredient=' + $scope.exclude + '&requirePictures=true&callback=JSON_CALLBACK').
+	       	$http.jsonp('http://api.yummly.com/v1/api/recipes?_app_id=' + $scope.appId + '&_app_key=' + $scope.apiKey + '&allowedCuisine[]=cuisine^cuisine-' + $scope.cuisine + '&requirePictures=true&callback=JSON_CALLBACK').
         	//if successful return, parse data
 	        success(function(data) {
 	        	//forEach loop runs through matches
@@ -54,13 +55,13 @@ EatInApp.config(function($stateProvider, $urlRouterProvider) {
 		controller: function ($scope, $http, $stateParams) {
 			//includes recipe id in url parameters
 			$scope.id = $stateParams.id;
-			$scope.appId = '4606347e';
-    		$scope.apiKey = '2b0dc330fcebb3d65bdddc74aae878b3';
+			$scope.appId = 'a4d85a57';
+    		$scope.apiKey = '4dda81acc7ebb71956fe76c76f0ec363';
 	    	$http.jsonp('http://api.yummly.com/v1/api/recipe/' +$stateParams.id
 	    	+ '?_app_id=' + $scope.appId + '&_app_key=' + $scope.apiKey + '&callback=JSON_CALLBACK').
 	    	success(function(data) {
 	    		$scope.details = data;
-	    		console.log($scope.details);
+
 	    	}). //success
 	    	error(function(error) {
 				alert('Recipe not found');

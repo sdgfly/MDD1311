@@ -8,11 +8,41 @@
 		 url('../fonts/santana.eot')/* IE */;
 }
 
+
+.grey {
+	color: #414141;
+}
+
+.list-container {
+	margin-top: 50px;
+	padding-top: 5px;
+}
+
+.list-container a {
+	color: #414141;
+	font-size: 22px;
+}
 /* ==== Body Styles ==== */
 
 body{
 	background-color: #7E8CA4;
 	color: #EFEFEF;
+}
+
+header {
+	background-color: #000;
+}
+
+footer {
+	background-color: #000;
+}
+
+.details-list {
+	list-style: none;
+}
+
+.details-list li {
+	margin: 5px 0;
 }
 
 /* ==== Heading styles ==== */
@@ -32,11 +62,9 @@ body{
 	color: #000;
 }
 
-.bottom {
-	position: fixed;
-	bottom: 5;
+.border-botom {
+	border-bottom: 1pxx solid #414141;
 }
-
 
 .center {
 	margin: auto;

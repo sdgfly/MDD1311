@@ -1,0 +1,24 @@
+<!--Search Results View-->
+<div class="list-container grey">
+	<table class="table result-table table-hover">
+		<tbody>        		
+		<tr ng-repeat="recipe in results"> 
+			<td>	
+		<!-- dynamic url's based on id of recipe selected-->		
+				<a href="#/details/{{recipe.id}}">
+		<!--90 x 90px image retrieved from API-->
+		   		<img ng-src="{{recipe.imageUrlsBySize.90}}" />
+		   		</a>
+		    </td>
+		    <td>
+		<!--Recipe name,Yummly rating, and source page displayed here-->
+		    	<a href="#/details/{{recipe.id}}">
+	            {{recipe.recipeName}}</a>
+	            <p><strong>Rating: {{recipe.rating}}</strong></p>
+	            <p>By: <em>{{recipe.sourceDisplayName}}</em></p>
+	            
+		    </div>
+		</tr>
+		</tbody>
+	</table>
+</div>

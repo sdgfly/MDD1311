@@ -1,0 +1,31 @@
+<!--Details View-->
+<div id="detail-result">
+<!--details is array populated by detail controller-->
+	
+	<h1 class="grey">{{details.name}}</h1>
+	<hr />
+	<div ng-repeat="detail in details.images" class="col-xs-12 col-sm-4">
+		<img class="img-responsive" ng-src="{{detail.imageUrlsBySize.360}}" alt="{{details.name}}" />
+	</div>
+	<div class="col-xs-12 col-sm-4">
+		<h2>Ingredients</h2>
+		<ul>
+			<li ng-repeat="detail in details.ingredientLines">
+				<strong>{{detail}}</strong>
+			</li>				
+		</ul>
+	</div>
+	<div class="col-xs-12 col-sm-4">
+	<!--This ul displays total cook time, servings, external link to procedural recipe-->
+		<ul class="details-list">
+			<li><strong>Total Time: </strong>{{details.totalTime}}</li>
+			<li><strong>Makes: </strong> {{details.yield}} servings</li>
+			<li><strong>Recipie found on: </strong></li>
+			<li><a class="btn btn-primary" href="{{details.source.sourceRecipeUrl}}">{{details.source.sourceDisplayName}}</a></li>
+			<li>{{details.attribution.text}}</li> 
+			<li><a href="{{details.attribution.url}}"><img ng-src="{{details.attribution.logo}}" alt="Yummly logo" /></a></li>
+
+		</ul>
+	</div>
+
+</div>

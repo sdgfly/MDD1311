@@ -1,0 +1,27 @@
+<!-- default view -->
+<div>
+	<form method="?">
+		<legend><h1>What do you feel like making?</h1></legend>
+		<div class="form-group col-xs-12 ">
+			<label for="style">Cuisine:</label>
+			<p>Options are: American, Italian, Asian, Mexican, Southern &amp; Soul Food, French, Southwestern, Barbecue, Indian, Chinese, Cajun &amp; Creole, English, Mediterranean, Greek, Spanish, German, Thai, Moroccan, Irish, Japanese, Cuban, Hawaiin, Swedish, Hungarian, Portugese</p>
+
+			<!--ng-models define what parameters are sent through API calls-->
+			
+			<input class="form-control" ng-model="cuisine" type="text" id="cuisine" placeholder="Choose a cuisine"/>
+		</div>
+		<div class="form-group col-xs-12 ">
+			<label for="course">Course:</label>
+			<p>Options are: Main Dishes, Desserts, Side Dishes, Lunch and Snacks, Appetizers, Salads, Breads, Breakfast and Soups, Beverages, Condiments and Sauces, Cocktails</p>
+			
+			<input class="form-control" ng-model="course" type="text" id="course" placeholder="Choose a course" />
+		</div>
+
+		<div class="col-xs-12 col-sm-2 center">
+	<!--ui-sref acts similarly to href, but navigates states vs. routes/url's-->
+		<a ui-sref=".results" class=" btn btn-primary">Search</a>
+		</div>
+	</form>
+</div>
+<!-- -->
+<div ui-view></div>
